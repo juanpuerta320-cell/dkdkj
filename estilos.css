@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --azul: #2688b7;
+    --azul-claro: #c8e8f7;
+    --verde: #3b8a42;
+    --verde-claro: #d5ebc6;
+    --morado: #8050a7;
+    --morado-claro: #e7d4f5;
+    --naranja: #e76b32;
+    --negro: #202333;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--negro);
+    background: #eceaf0;
+    padding: 24px;
+    line-height: 1.5;
+}
+
+.pagina {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #b7b1ca;
+    border-radius: 18px;
+    background-color: #fffefb;
+    background-image:
+        linear-gradient(#c9d2dc55 1px, transparent 1px),
+        linear-gradient(90deg, #c9d2dc55 1px, transparent 1px);
+    background-size: 27px 27px;
+    box-shadow: 0 8px 25px #00000012;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0 30px;
+    text-align: center;
+    border-bottom: 3px solid var(--azul);
+}
+
+.encabezado h1 {
+    font-size: clamp(27px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.encabezado p {
+    color: #263957;
+    font-size: clamp(15px, 2vw, 22px);
+    margin-top: 12px;
+    text-decoration: underline;
+    text-decoration-color: var(--azul);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 9px;
+}
+
+.icono-header { font-size: 43px; }
+.dinero { margin-left: 5px; }
+
+.contenido {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.columna-izquierda, .columna-derecha { min-width: 0; }
+
+.panel {
+    border: 2px solid #25283b;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 25px;
+    background: #ffffffb8;
+}
+
+.titulo {
+    display: inline-block;
+    padding: 6px 15px;
+    border: 3px solid #24263a;
+    border-radius: 7px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.azul { background: var(--azul-claro); }
+.verde { background: #9fdbc6; }
+.morado { background: var(--morado-claro); }
+
+#formulario { margin-top: 20px; }
+
+#formulario label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 13px 0 7px;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 49px;
+    padding: 5px 12px;
+    background: #fff;
+    border: 2px solid #22283a;
+    border-radius: 20px;
+}
+
+.campo:focus-within {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px #2688b72b;
+}
+
+.campo input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--negro);
+    font-size: 18px;
+    padding: 5px;
+}
+
+.precio-campo span { font-size: 22px; font-weight: bold; }
+
+.boton-calcular {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: 3px solid #172c18;
+    border-radius: 14px;
+    background: #a7d18e;
+    color: #15271b;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.boton-calcular:hover {
+    background: #83bd68;
+    transform: translateY(-2px);
+}
+
+.boton-calcular:active { transform: scale(.98); }
+.mensaje { margin-top: 10px; font-size: 14px; font-weight: bold; }
+.mensaje.error { color: #b42323; }
+
+.resumen ul { list-style: none; margin-top: 14px; }
+
+.resumen li {
+    position: relative;
+    padding-left: 19px;
+    margin-bottom: 7px;
+    font-size: 16px;
+}
+
+.resumen li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.separador {
+    height: 4px;
+    margin: 18px 0;
+    border-radius: 5px;
+    background: repeating-linear-gradient(90deg, var(--morado) 0 12px, transparent 12px 18px);
+}
+
+.etiqueta-ejemplo {
+    display: inline-block;
+    padding: 5px 13px;
+    border: 2px solid var(--azul);
+    border-radius: 20px;
+    background: var(--azul-claro);
+    font-weight: bold;
+}
+
+.resumen > p { margin-top: 12px; font-size: 16px; }
+
+.operacion {
+    margin: 15px auto;
+    padding: 9px;
+    text-align: center;
+    border-radius: 18px;
+    background: #efd1e8;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.total-ejemplo {
+    padding: 10px;
+    border: 2px solid #286638;
+    border-radius: 7px;
+    background: var(--verde-claro);
+    text-align: center;
+    font-size: 16px;
+}
+
+.leyenda { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+
+#listaPasos { display: flex; flex-direction: column; gap: 22px; }
+
+.tarjeta {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 17px;
+    padding: 20px;
+    border: 4px solid;
+    border-radius: 9px;
+    background: #ffffffdc;
+    min-height: 175px;
+    transition: .2s;
+}
+
+.tarjeta-naranja { border-color: var(--naranja); }
+.tarjeta-verde { border-color: var(--verde); }
+.tarjeta-morada { border-color: var(--morado); }
+
+.icono-paso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #26364b;
+    border-radius: 24px;
+    font-size: 48px;
+}
+
+.azul-fondo { background: #d7eaf8; }
+.verde-fondo { background: #c6e7d5; }
+.amarillo-fondo { background: #f0e6a0; }
+.informacion { min-width: 0; }
+
+.informacion h3 { font-size: clamp(16px, 1.7vw, 23px); line-height: 1.25; }
+.informacion p { margin: 10px 0; font-size: 17px; overflow-wrap: anywhere; }
+
+.estado {
+    display: inline-block;
+    padding: 3px 13px;
+    border: 2px solid;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.pendiente { border-color: #bd4a31; background: #fbe5dc; color: #64251a; }
+.calculado { border-color: #35794c; background: #d9eed7; color: #214a2b; }
+.completado { border-color: #25804a; background: #c8f0d4; color: #15562d; }
+
+.acciones { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.check-label { display: grid; place-items: center; width: 30px; height: 35px; margin-bottom: 15px; }
+.check-label input { width: 23px; height: 23px; cursor: pointer; accent-color: var(--verde); }
+
+.acciones button {
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.acciones button:hover { transform: scale(1.2); }
+.tarjeta.terminada { background: #e9f8eb; opacity: .85; }
+.tarjeta.terminada h3 { text-decoration: line-through; }
+
+.resultado-final {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+    padding: 20px;
+    border: 3px solid var(--verde);
+    border-radius: 12px;
+    background: #e4f3d9;
+}
+
+.resultado-final > span { font-size: 45px; }
+.resultado-final p { font-size: 13px; font-weight: bold; }
+.resultado-final h2 { font-size: clamp(24px, 3vw, 35px); overflow-wrap: anywhere; }
+.resultado-final small { font-size: 14px; }
+[hidden] { display: none !important; }
+
+footer { padding-top: 25px; text-align: center; font-size: 13px; color: #5d6474; }
+
+@media (max-width: 850px) {
+    body { padding: 10px; }
+    .pagina { padding: 18px; }
+    .contenido { grid-template-columns: 1fr; gap: 15px; }
+    .encabezado { gap: 10px; }
+    .icono-header { font-size: 30px; }
+    .tarjeta { grid-template-columns: 75px minmax(0, 1fr) auto; gap: 12px; padding: 14px; }
+    .icono-paso { width: 75px; height: 75px; font-size: 36px; }
+    .informacion h3 { font-size: 18px; }
+    .informacion p { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+    .pagina { padding: 12px; }
+    .encabezado { align-items: flex-start; }
+    .encabezado h1 { font-size: 25px; }
+    .encabezado p { font-size: 14px; }
+    .dinero { display: none; }
+    .panel { padding: 13px; }
+    .titulo { font-size: 15px; }
+    .tarjeta { grid-template-columns: 55px minmax(0, 1fr) 30px; gap: 9px; padding: 10px; border-width: 3px; }
+    .icono-paso { width: 55px; height: 60px; font-size: 27px; border-radius: 13px; }
+    .informacion h3 { font-size: 15px; }
+    .informacion p { font-size: 13px; margin: 7px 0; }
+    .estado { padding: 2px 7px; font-size: 10px; }
+    .acciones button { font-size: 20px; }
+    .check-label { width: 25px; margin-bottom: 8px; }
+    .check-label input { width: 20px; height: 20px; }
+}

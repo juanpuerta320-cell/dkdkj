@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Ventas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <main class="pagina">
+        <header class="encabezado">
+            <div class="icono-header">🛒</div>
+            <div>
+                <h1>ALGORITMO DE VENTAS</h1>
+                <p>Calcula fácilmente el precio total de una compra.</p>
+            </div>
+            <div class="icono-header dinero">💰</div>
+        </header>
+
+        <div class="contenido">
+            <section class="columna-izquierda">
+                <div class="panel">
+                    <h2 class="titulo azul">ENTRADA DE DATOS</h2>
+                    <form id="formulario">
+                        <label for="precio">Precio del producto:</label>
+                        <div class="campo precio-campo">
+                            <span>$</span>
+                            <input type="number" id="precio" min="0" step="any" placeholder="Ej. 5000" required>
+                        </div>
+
+                        <label for="cantidad">Cantidad de productos:</label>
+                        <div class="campo">
+                            <input type="number" id="cantidad" min="1" step="1" placeholder="Ej. 3" required>
+                        </div>
+
+                        <button type="submit" class="boton-calcular">[ Calcular total ]</button>
+                    </form>
+                    <p id="mensaje" class="mensaje" aria-live="polite"></p>
+                </div>
+
+                <div class="panel resumen">
+                    <h2 class="titulo morado">RESUMEN</h2>
+                    <ul>
+                        <li>Operación: multiplicación.</li>
+                        <li>Objetivo: evitar errores en las cuentas.</li>
+                        <li>Ventaja: ahorrar tiempo.</li>
+                    </ul>
+                    <div class="separador"></div>
+                    <span class="etiqueta-ejemplo">Ejemplo:</span>
+                    <p>Si un producto cuesta $5.000 y el cliente compra 3 unidades:</p>
+                    <div class="operacion" id="ejemploOperacion">5.000 × 3 = 15.000</div>
+                    <div class="total-ejemplo">
+                        Total a pagar: <strong id="ejemploTotal">$15.000</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="columna-derecha">
+                <div class="leyenda">
+                    <span class="titulo verde">PASOS</span>
+                    <span class="titulo morado">PROCESO</span>
+                </div>
+
+                <div id="listaPasos">
+                    <article class="tarjeta tarjeta-naranja">
+                        <div class="icono-paso azul-fondo">🛒</div>
+                        <div class="informacion">
+                            <h3>CALCULAR COMPRA</h3>
+                            <p>Precio × cantidad</p>
+                            <span class="estado pendiente">PENDIENTE</span>
+                        </div>
+                        <div class="acciones">
+                            <label class="check-label"><input type="checkbox" aria-label="Completar calcular compra"></label>
+                            <button class="editar" aria-label="Editar paso">✏️</button>
+                            <button class="eliminar" aria-label="Eliminar paso">🗑️</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-verde">
+                        <div class="icono-paso verde-fondo">🧮</div>
+                        <div class="informacion">
+                            <h3>TOTAL A PAGAR</h3>
+                            <p id="textoTotal">Resultado de la multiplicación</p>
+                            <span class="estado calculado">CALCULADO</span>
+                        </div>
+                        <div class="acciones">
+                            <label class="check-label"><input type="checkbox" aria-label="Completar total a pagar"></label>
+                            <button class="editar" aria-label="Editar paso">✏️</button>
+                            <button class="eliminar" aria-label="Eliminar paso">🗑️</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-morada">
+                        <div class="icono-paso amarillo-fondo">✅</div>
+                        <div class="informacion">
+                            <h3>VENTA FINALIZADA</h3>
+                            <p>Mostrar el valor que debe pagar el cliente.</p>
+                            <span class="estado pendiente">PENDIENTE</span>
+                        </div>
+                        <div class="acciones">
+                            <label class="check-label"><input type="checkbox" aria-label="Completar venta finalizada"></label>
+                            <button class="editar" aria-label="Editar paso">✏️</button>
+                            <button class="eliminar" aria-label="Eliminar paso">🗑️</button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="resultado-final" id="resultadoFinal" hidden>
+                    <span>🧾</span>
+                    <div>
+                        <p>TOTAL DE LA COMPRA</p>
+                        <h2 id="totalFinal">$0</h2>
+                        <small id="detalleFinal"></small>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>Proyecto educativo · Algoritmo de ventas</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
